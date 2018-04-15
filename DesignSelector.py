@@ -3,11 +3,11 @@ import sublime, sublime_plugin
 class SelectDesignCommand(sublime_plugin.WindowCommand):
 	def run(self, **args):
 		settings = self.load_settings();
-		day_theme: settings.get("SublDesignSelector.day.theme", "Default")
-		day_scheme: settings.get("SublDesignSelector.day.color_scheme", "Breakers")
+		day_theme = settings.get("SublDesignSelector.day.theme", "Default")
+		day_scheme = settings.get("SublDesignSelector.day.color_scheme", "Breakers")
 
-		night_theme: settings.get("SublDesignSelector.night.theme", "Default")
-		night_scheme: settings.get("SublDesignSelector.night.color_scheme", "Breakers")
+		night_theme = settings.get("SublDesignSelector.night.theme", "Default")
+		night_scheme = settings.get("SublDesignSelector.night.color_scheme", "Breakers")
 
 	if "setting" in args:
 		self.apply_setting(args['setting'])
