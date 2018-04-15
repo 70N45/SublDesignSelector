@@ -1,12 +1,12 @@
 [
 	{
 		"caption": "DesignSelector: Day / Light",
-		"command": "select_design",
+		"command": "apply_setting",
 		"args": {"setting": "day"}
 	},
 	{
 		"caption": "DesignSelector: Night / Dark",
-		"command": "select_design",
+		"command": "apply_setting",
 		"args": {"setting": "night"}
 	}
 ]
