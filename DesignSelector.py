@@ -1,26 +1,28 @@
 import sublime, sublime_plugin
 
 class SelectDesignCommand(sublime_plugin.WindowCommand):
-	def run(self, **args):
-		settings = self.load_settings();
-		day_theme = settings.get("SublDesignSelector.day.theme", "Default")
-		day_scheme = settings.get("SublDesignSelector.day.color_scheme", "Breakers")
+    def run(self, **args):
+        settings = self.load_settings();
+        default_scheme      = "Packages/Color Scheme - Default/Monokai.tmTheme",
+        default_theme       = "Default.sublime-theme",
+        self.day_theme      = settings.get("SublDesignSelector_daytheme", default_theme)
+        self.day_scheme     = settings.get("SublDesignSelector_dayscheme", default_scheme)
 
-		night_theme = settings.get("SublDesignSelector.night.theme", "Default")
-		night_scheme = settings.get("SublDesignSelector.night.color_scheme", "Breakers")
+        self.night_theme    = settings.get("SublDesignSelector_nighttheme", default_theme)
+        self.night_scheme   = settings.get("SublDesignSelector_nightscheme", default_scheme)
 
-	if "setting" in args:
-		self.apply_setting(args['setting'])
+        if "setting" in args:
+            self.apply_setting(args['setting'])
 
-	def apply_setting(setting):
-		settings = self.load_settings();
-		if setting == "day":
-			settings.set("theme", day_theme)
-			settings.set("color_scheme")
-		elif setting == "night":
-			settings.set("theme", night_theme)
-			settings.set("color_scheme", night_scheme)
-		sublime.save_settings('Preferences.settings')
+    def apply_setting(self, setting):
+        settings = self.load_settings();
+        if setting == "day":
+            settings.set("theme", self.day_theme)
+            settings.set("color_scheme", self.day_scheme)
+        elif setting == "night":
+            settings.set("theme", self.night_theme)
+            settings.set("color_scheme", self.night_scheme)
+        sublime.save_settings('Preferences.sublime-settings')
 
-    def load_settings():
-        return sublime.load_settings('Preferences.settings')
+    def load_settings(self):
+        return sublime.load_settings('Preferences.sublime-settings')
