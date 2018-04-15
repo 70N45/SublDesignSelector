@@ -12,16 +12,10 @@ Install by cloning into your Sublime\ Text\ 3/Packages folder.
 Set your themes in the settings like this:
 
 ```
-"SublDesignSelector": {
-	"day": {
-		"theme": "ayu-light.sublime-theme",
-		"color_scheme": "Packages/ayu/ayu-light.tmTheme"
-	},
-	"night": {
-		"theme": "ayu-dark.sublime-theme",
-		"color_scheme": "Packages/ayu/ayu-dark.tmTheme"
-	}
-}
+"SublDesignSelector_dayscheme": "Packages/ayu/ayu-light.tmTheme",
+"SublDesignSelector_daytheme": "ayu-light.sublime-theme",
+"SublDesignSelector_nightscheme": "Packages/ayu/ayu-dark.tmTheme",
+"SublDesignSelector_nighttheme": "ayu-dark.sublime-theme"
 ```
 
 ## Usage
